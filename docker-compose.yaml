@@ -1,7 +1,10 @@
 services:
-  web:
-    build: .
+  allinone:
+    image: youshandefeiyang/allinone
+    container_name: allinone
+    privileged: true
+    restart: always
     ports:
-      - "${PORT}:5000"
-  redis:
-    image: "redis:alpine"
+      - "35455:35455"
+    network_mode: bridge
+    command: -tv=true -aesKey=1zx5pk7ipfal3k9w23jxc3ni75rhfdut -userid=6329317103 -token=1f2fbb7f2db42fa04c36a91065aa72ecec018efbed84c354262191dc076e79b49ff68ac04a628927913b290d1dbe28e28bde3196267d25f81a7b4cea6ef08dae10eb9cd208a884
